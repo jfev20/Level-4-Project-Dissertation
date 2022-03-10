@@ -147,30 +147,129 @@ read these, but they will improve how you write.
 
 %==================================================================================================================================
 \chapter{Background}
+
+\section{Phishing & Related Topics}
 With the rise of technology and computer-based solutions, many corporations around the world rely computers for data storage, analysis, and communication. However, this has one fatal flaw: people are required to operate the vast majority of this technology. This has led to a large number of cyber-attacks directed towards the person behind the screen rather than the device itself, mainly through an attack known as “phishing”.
-Phishing is a type of attack that makes use of social engineering to coerce users into giving personal information over to these attackers, known as “phishers”. This can be done with varying degrees of complexity, from generic widespread “spam” emails to user specific, personalised attacks (also known as “spear phishing”). When spear phishing targets a highly influential person within a company, this can be known as “whaling” due to the large return of data/credentials/access from the company. In Q4 2016, the Anti-Phishing Working Group (APWG) found that each month there were around 90,000 phishing attacks which was an increase of 5753\% of average phishing attacks from the last 12 years (\cite{aarsten1996patterns}). However, phishing is not limited to exclusively emails. Phishing can be performed in a wide variety of methods and on different platforms such as social media and instant messaging services. As long as the user is exploited to perform an action or relay sensitive information, the attack is considered a phishing attack.
+Phishing is a type of attack that makes use of social engineering to coerce users into giving personal information over to these attackers, known as “phishers”. This can be done with varying degrees of complexity, from generic widespread “spam” emails to user specific, personalised attacks (also known as “spear phishing”). When spear phishing targets a highly influential person within a company, this can be known as “whaling” due to the large return of data/credentials/access from the company. In Q4 2016, the Anti-Phishing Working Group (APWG) found that each month there were around 90,000 phishing attacks which was an increase of 5753\% of average phishing attacks from the last 12 years \citep{aarsten1996patterns}. However, phishing is not limited to exclusively emails. Phishing can be performed in a wide variety of methods and on different platforms such as social media and instant messaging services. As long as the user is exploited to perform an action or relay sensitive information, the attack is considered a phishing attack.
+\newline
 
-The most successful types of phishing are often the most personalised, context-based attacks. These are often aimed at very specific people/departments within major companies making use of context-relevant names and details. For example, one such attack is the 2010 Kneber botnet attacks on government systems (\cite{villeneuve2010kneber}). These attacks made use of security-based blog posts as content for emails that prompted users to download and install a Microsoft Windows security system fix. Once downloaded, this malware would not only extract data but also installed additional software to crack and extract military documents. A total of 81 computers were found to be infected with around 1533 confidential/sensitive documents stolen. The main threat of spear phishing is how convincing the email/communication may seem from the point of view of the victim, often making use of a need for urgency and specific contextual knowledge (\cite{chiew2018survey}).
+The most successful types of phishing are often the most personalised, context-based attacks. These are often aimed at very specific people/departments within major companies making use of context-relevant names and details. For example, one such attack is the 2010 Kneber botnet attacks on government systems \citep{villeneuve2010kneber}. These attacks made use of security-based blog posts as content for emails that prompted users to download and install a Microsoft Windows security system fix. Once downloaded, this malware would not only extract data but also installed additional software to crack and extract military documents. A total of 81 computers were found to be infected with around 1533 confidential/sensitive documents stolen. The main threat of spear phishing is how convincing the email/communication may seem from the point of view of the victim, often making use of a need for urgency and specific contextual knowledge \citep{nicho2018evaluating}.
+\newline
 
-\section{Guidance}
-\begin{itemize}    
-    \item
-      Don't give a laundry list of references.
-    \item
-      Tie everything you say to your problem.
-    \item
-      Present an argument.
-    \item Think critically; weigh up the contribution of the background and put it in context.    
-    \item
-      \textbf{Don't write a tutorial}; provide background and cite
-      references for further information.
-\end{itemize}
+Phishing often makes use of vulnerabilities within browsers. By convincing the user to perform a specified action, this can enable the phisher to take advantage of a number of exploits. URL links are commonly used in phishing emails, often with an urgent prompt for the user to click the link. These URLs can be obfuscated by phishers through several means, although most often it is through sound-squatting and typo-squatting \citep{chiew2018survey}. Both are methods of URL manipulation to trick the user into thinking the URL is recognisable and/or legitimate. Sound-squatting is the technique of changing the domain names of websites to sound similar to legitimate domains, often making use of homonyms to confuse the user (e.g. www.ryanairways.com to www.ryanheirways.com). Typo-squatting uses a similar technique but uses domains with intentional typos to trick the user (e.g. www.anazon.com). This can also be used to “phish” users that genuinely make a typo when entering the URL address of a legitimate website.
+\newline
+
+These links will redirect users to compromised webpages that can take advantage of the user’s device in a number of ways. Websites can use cross-site scripting attacks and SQL injections to inject harmful code into the user’s device to potentially access data stored. However, the entire website doesn’t not need to be custom made by the phisher and instead the malicious URL could be used to impose a malicious element on top of the legitimate website, this is known as HTML substitution \citep{chiew2018survey}.
+\newline
+
+\section{Related Systems}
+
+\subsection{Anti-Phishing Phil}
+Anti-Phishing Phil \citep{sheng2007anti} is an online educational game that attempts to teach players how to successfully avoid phishing attacks. This is done mainly by teaching them how to identify red flags and tells given by phishing emails and URLs. The game itself gets the player to take the role of ‘Phil’ a fish who is attempting to eat as many worms as possible, as shown in figure \ref{fig:antiphishingphil}. Each worm is paired with a URL which is potentially malicious, and the player must decide whether to eat the worm/URL (therefore considering it to be legitimate) or reject the worm/URL (considering it to be a phishing URL). If the player is stuck, they can ask for help from Phil’s father who will give them hints as to the nature of URL. 
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/antiphishingphil.png}    
+    \caption{todo}
+    \label{fig:antiphishingphil} 
+\end{figure}
+\newline
+
+\subsection{What.Hack}
+What.Hack \citep{wen2019hack} is student project to create an anti-phishing training game in which players have to discern phishing emails from legitimate emails. The game takes the form of an (extremely simplified) email client. Once the user has made a choice, they must click either the accept or reject buttons based on their guess. For additional help the user can ask an in-game advisor to give hints, as show in figure \ref{fig:whathack}. On top of the advisor, the players can access a ‘rulebook’, giving them a series of rules/guidelines to follow to determine if an email is malicious. 
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/whathack.png}    
+    \caption{todo}
+    \label{fig:whathack} 
+\end{figure}
+\newline
+
+\subsection{PhishGuru}
+PhishGuru \citep{kumaraguru2008lessons} was a training program run to train employees how to identify and avoid phishing attacks. The training scheme came in the form of an email which presented a short comic strip (figure \ref{fig:phishguru}) that briefly went over the key red flags of a phishing email. Once this short phishing comic has been delivered to the participants, they were (secretly) sent fake phishing emails to their workplace email accounts by the creators of PhishGuru. These emails would collect data and statistics of how the participant would deal with the email.  
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/phishguru.png}    
+    \caption{todo}
+    \label{fig:phishguru} 
+\end{figure}
 
 %==================================================================================================================================
 \chapter{Analysis/Requirements}
-What is the problem that you want to solve, and how did you arrive at it?
-\section{Guidance}
-Make it clear how you derived the constrained form of your problem via a clear and logical process. 
+
+\section{User Stories}
+\textbf{Matt} is a bank manager and manages multiple teams within the department. Due to the rise in internet-based attacks, he wants to train his staff for the different types of attacks they may face, one of these being phishing attacks. Matt wants to give his staff regular anti-phishing training exercises that they can complete at work or at home. Due to workplace regulations and computer safety, he cannot install any software on the work computers so must have a training program that can run in a web browser. He wants to easily be able to see his employees progress, including what they are consistently missing/failing at and what their strengths are. 
+
+\textbf{Thomas} is an employee in the software development department on company. They have plenty of technical experience and wish to keep up to date with the latest anti-phishing training techniques. He wants to be able to avoid the basic “tutorial” type training and go straight into the more technical, in-depth training. Thomas would be willing to install any type of training software as it would be easy for him to do. 
+
+\textbf{Sophie} is an employee for the human resources department of a company. They have little to no technical experience outside of operating their email client and similar tasks. Due to recent phishing attacks, they have been instructed to learn about phishing and methods to prevent successful attacks. Due to their lack of experience, they need every aspect of phishing explained in detail for the training to work successfully. Due to the amount of emails she receives, she needs lots of varied examples of common signposts of phishing emails. Her lack of proficiency in technology means she requires something that does not need to be install or have any complex set-up, preferably something she can use in her browser.
+
+\section{Functional Requirements}
+\subsection{Must Have}
+\begin{tabular}{ | m{10em} | m{25em}| m{5em} | } 
+  \hline
+  \textbf{Requirement} & \textbf{Description} & \textbf{Reference} \\ 
+  \hline
+  Training & This application must train the user in anti-phishing practices as per the product description &  \\ 
+  \hline
+  Fail States & The user must be able to pass or fail tasks based on their input as this would be effective training &  \\ 
+  \hline
+  Context in Design & The application must make effective use of context within the look/feel of the application itself as well as the tasks given to the user &  \\  
+  \hline
+  Context in Content & The application must make use of different levels of context within the actual content of the exercises the user needs to perform &  \\  
+  \hline
+  Broad representation & This application must display a broad range of different types of phishing to the user, teaching them methods to detect and avoid these different types &  \\  
+  \hline
+\end{tabular}
+
+\subsection{Should Have}
+\begin{tabular}{ | m{10em} | m{25em}| m{5em} | } 
+  \hline
+  \textbf{Requirement} & \textbf{Description} & \textbf{Reference} \\ 
+  \hline
+  Reflection & The application should be able to report the user’s progress through the training, including their weakest and strongest points &  \\ 
+  \hline
+  Immersion & The user should fine the application easy to immerse themselves in the game in terms of familiarity and comfortability  &  \\ 
+  \hline
+  Assistance & The application should assist the user as much as possible without giving them the answer (if the user is struggling with the task) &  \\ 
+  \hline
+\end{tabular}
+
+\subsection{Could Have}
+\begin{tabular}{ | m{10em} | m{25em}| m{5em} | } 
+  \hline
+  \textbf{Requirement} & \textbf{Description} & \textbf{Reference} \\ 
+  \hline
+  Difficulty Customisation & The application could give the user control over how difficult the training tasks are to allow more technically advanced users to jump ahead to more advanced training techniques &  \\ 
+  \hline
+  Multiple "Campaigns" & The application could make use of a number of “real-life” phishing attacks as training exercises  &  \\ 
+  \hline
+  Glossary & The application could give the user access to a glossary containing technical terms with descriptions and/or examples &  \\ 
+  \hline
+\end{tabular}
+
+\subsection{Would Be Nice To Have}
+\begin{tabular}{ | m{10em} | m{25em}| m{5em} | } 
+  \hline
+  \textbf{Requirement} & \textbf{Description} & \textbf{Reference} \\ 
+  \hline
+  User History & The application would benefit from a form of training history for each user to view progress over time &  \\ 
+  \hline
+\end{tabular}
+
+\section{Non-Functional Requirements}
+\begin{tabular}{ | m{10em} | m{25em}| m{5em} | } 
+  \hline
+  \textbf{Requirement} & \textbf{Description} & \textbf{Reference} \\ 
+  \hline
+  Ease of Installation & The application should be easy to install/use on a broad range of devices and environments (e.g. workplace, home PC, etc) &  \\ 
+  \hline
+  Multiple Devices & The application should work across a broad range on devices including tablets and mobile phones &  \\ 
+  \hline
+  Accessibility & The application should train people at any knowledge level and level of technical skill &  \\ 
+  \hline
+  Speed & The application should be fast to boot and operate &  \\ 
+  \hline
+\end{tabular} 
 
 %==================================================================================================================================
 \chapter{Design}
