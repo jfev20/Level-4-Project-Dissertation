@@ -108,7 +108,7 @@
 %\usepackage{sectsty}
 
 % make all cross-references clickable
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 
 % enable styled captions
 \usepackage[format=plain,
@@ -293,3 +293,5 @@ textfont=it,tableposition=above]{caption}
       \parsep=1pt plus 1pt
       \itemsep=\parsep}
 
+\usepackage{chngpage}
+\usepackage{float}

@@ -6,6 +6,13 @@
 %
 % put any additional packages here
 %
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
 
 \begin{document}
 
@@ -148,50 +155,80 @@ read these, but they will improve how you write.
 %==================================================================================================================================
 \chapter{Background}
 
-\section{Phishing & Related Topics}
-With the rise of technology and computer-based solutions, many corporations around the world rely computers for data storage, analysis, and communication. However, this has one fatal flaw: people are required to operate the vast majority of this technology. This has led to a large number of cyber-attacks directed towards the person behind the screen rather than the device itself, mainly through an attack known as “phishing”.
-Phishing is a type of attack that makes use of social engineering to coerce users into giving personal information over to these attackers, known as “phishers”. This can be done with varying degrees of complexity, from generic widespread “spam” emails to user specific, personalised attacks (also known as “spear phishing”). When spear phishing targets a highly influential person within a company, this can be known as “whaling” due to the large return of data/credentials/access from the company. In Q4 2016, the Anti-Phishing Working Group (APWG) found that each month there were around 90,000 phishing attacks which was an increase of 5753\% of average phishing attacks from the last 12 years \citep{aarsten1996patterns}. However, phishing is not limited to exclusively emails. Phishing can be performed in a wide variety of methods and on different platforms such as social media and instant messaging services. As long as the user is exploited to perform an action or relay sensitive information, the attack is considered a phishing attack.
-\newline
+\section{What is Phishing?}
+With the rise of technology and computer-based solutions, many corporations around the world rely on computers for data storage, analysis, and communication. However, this has one fatal flaw: people are required to operate the vast majority of this technology. This has led to a large number of cyber-attacks directed towards the person behind the screen rather than the device itself, mainly through an attack known as “phishing”.
 
-The most successful types of phishing are often the most personalised, context-based attacks. These are often aimed at very specific people/departments within major companies making use of context-relevant names and details. For example, one such attack is the 2010 Kneber botnet attacks on government systems \citep{villeneuve2010kneber}. These attacks made use of security-based blog posts as content for emails that prompted users to download and install a Microsoft Windows security system fix. Once downloaded, this malware would not only extract data but also installed additional software to crack and extract military documents. A total of 81 computers were found to be infected with around 1533 confidential/sensitive documents stolen. The main threat of spear phishing is how convincing the email/communication may seem from the point of view of the victim, often making use of a need for urgency and specific contextual knowledge \citep{nicho2018evaluating}.
-\newline
+Phishing is a type of attack that makes use of social engineering to coerce users into giving personal information over to these attackers, known as “phishers”. This can be done with varying degrees of complexity, from generic widespread “spam” emails to user specific, personalised attacks (also known as “spear phishing”). When spear phishing targets a highly influential person within a company, this can be known as “whaling” due to the large return of data/credentials/access from the company. In Q4 2016, the Anti-Phishing Working Group (APWG) found that each month there were around 90,000 phishing attacks which was an increase of 5753\% of average phishing attacks from the last 12 years \citep{apwg2017phishing}. However, phishing is not limited to exclusively emails. Phishing can be performed in a wide variety of methods and on different platforms such as social media and instant messaging services. As long as the user is exploited to perform an action or relay sensitive information, the attack is considered a phishing attack.
+
+\subsection{Tactics}
+\label{sec:other_tactics}
 
 Phishing often makes use of vulnerabilities within browsers. By convincing the user to perform a specified action, this can enable the phisher to take advantage of a number of exploits. URL links are commonly used in phishing emails, often with an urgent prompt for the user to click the link. These URLs can be obfuscated by phishers through several means, although most often it is through sound-squatting and typo-squatting \citep{chiew2018survey}. Both are methods of URL manipulation to trick the user into thinking the URL is recognisable and/or legitimate. Sound-squatting is the technique of changing the domain names of websites to sound similar to legitimate domains, often making use of homonyms to confuse the user (e.g. www.ryanairways.com to www.ryanheirways.com). Typo-squatting uses a similar technique but uses domains with intentional typos to trick the user (e.g. www.anazon.com). This can also be used to “phish” users that genuinely make a typo when entering the URL address of a legitimate website.
-\newline
 
 These links will redirect users to compromised webpages that can take advantage of the user’s device in a number of ways. Websites can use cross-site scripting attacks and SQL injections to inject harmful code into the user’s device to potentially access data stored. However, the entire website doesn’t not need to be custom made by the phisher and instead the malicious URL could be used to impose a malicious element on top of the legitimate website, this is known as HTML substitution \citep{chiew2018survey}.
-\newline
+
+\subsection{Targets of Phishing}
+
+\subsection{Why is Phishing Worth Investigating?}
+
+\section{Context in Phishing}
+
+The most successful types of phishing are often the most personalised, context-based attacks. These are often aimed at very specific people/departments within major companies making use of context-relevant names and details. For example, one such attack is the 2010 Kneber botnet attacks on government systems \citep{villeneuve2010kneber}. These attacks made use of security-based blog posts as content for emails that prompted users to download and install a Microsoft Windows security system fix. Once downloaded, this malware would not only extract data but also installed additional software to crack and extract military documents. A total of 81 computers were found to be infected with around 1533 confidential/sensitive documents stolen. The main threat of spear phishing is how convincing the email/communication may seem from the point of view of the victim, often making use of a need for urgency and specific contextual knowledge \citep{nicho2018evaluating}.
+
+
+\section{Effective Training}
+
 
 \section{Related Systems}
+Due to the popularity of phishing, many different attempts at anti-phishing training have been made before. From these, there are a few key systems that attempt to make use of both user interaction and context in phishing. The user interaction put foward by the following systems are key in effective training especially in avoid phishing attacks.
 
 \subsection{Anti-Phishing Phil}
-Anti-Phishing Phil \citep{sheng2007anti} is an online educational game that attempts to teach players how to successfully avoid phishing attacks. This is done mainly by teaching them how to identify red flags and tells given by phishing emails and URLs. The game itself gets the player to take the role of ‘Phil’ a fish who is attempting to eat as many worms as possible, as shown in figure \ref{fig:antiphishingphil}. Each worm is paired with a URL which is potentially malicious, and the player must decide whether to eat the worm/URL (therefore considering it to be legitimate) or reject the worm/URL (considering it to be a phishing URL). If the player is stuck, they can ask for help from Phil’s father who will give them hints as to the nature of URL. 
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.5\linewidth]{images/antiphishingphil.png}    
-    \caption{todo}
-    \label{fig:antiphishingphil} 
-\end{figure}
-\newline
+Anti-Phishing Phil \citep{sheng2007anti} is an online educational game that attempts to teach players how to successfully avoid phishing attacks. This is done mainly by teaching them how to identify red flags and tells given by phishing emails and URLs. The game itself gets the player to take the role of ‘Phil’ a fish who is attempting to eat as many worms as possible, as shown in Figure~\ref{fig:antiphishingphil}. Each worm is paired with a URL which is potentially malicious, and the player must decide whether to eat the worm/URL (therefore considering it to be legitimate) or reject the worm/URL (considering it to be a phishing URL). If the player is stuck, they can ask for help from Phil’s father who will give them hints as to the nature of URL. 
+
+Although this may be helpful in teaching the key methods to detecting and avoiding phishing attacks, the complete lack of context takes away any benefits this training program might provide. As a result of this, the users will have difficulty applying the knowledge learned to any real-life situations. 
 
 \subsection{What.Hack}
-What.Hack \citep{wen2019hack} is student project to create an anti-phishing training game in which players have to discern phishing emails from legitimate emails. The game takes the form of an (extremely simplified) email client. Once the user has made a choice, they must click either the accept or reject buttons based on their guess. For additional help the user can ask an in-game advisor to give hints, as show in figure \ref{fig:whathack}. On top of the advisor, the players can access a ‘rulebook’, giving them a series of rules/guidelines to follow to determine if an email is malicious. 
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.6\linewidth]{images/whathack.png}    
-    \caption{todo}
-    \label{fig:whathack} 
-\end{figure}
-\newline
+What.Hack \citep{wen2019hack} is student project to create an anti-phishing training game in which players have to discern phishing emails from legitimate emails. The game takes the form of an (extremely simplified) email client. Once the user has made a choice, they must click either the accept or reject buttons based on their guess. For additional help the user can ask an in-game advisor to give hints, as show in Figure~\ref{fig:whathack_1}. On top of the advisor, the players can access a ‘rulebook’, giving them a series of rules/guidelines to follow to determine if an email is malicious. This application applies a much greater level of context to the simulated phishing attacks, from the actual design of the user experience  right through to the content of the actual emails. 
+
+Framing the game itself to take the form of an email client gives the player a greater frame of reference for what actual phishing attacks look like 'out in the wild'. However, the design of the client has been streamlined to the point of losing key elements of the contextual value of framing it as a email client. As shown in Figure~\ref{fig:whathack_2}, each of the emails contains 'Submit Phishing' and 'Allow Entry' buttons. For the regular phishing victim, these buttons do not exist within standard email clients and the 'gamification' of these elements only depreciates the important contextual value that a similar product might hold.
 
 \subsection{PhishGuru}
-PhishGuru \citep{kumaraguru2008lessons} was a training program run to train employees how to identify and avoid phishing attacks. The training scheme came in the form of an email which presented a short comic strip (figure \ref{fig:phishguru}) that briefly went over the key red flags of a phishing email. Once this short phishing comic has been delivered to the participants, they were (secretly) sent fake phishing emails to their workplace email accounts by the creators of PhishGuru. These emails would collect data and statistics of how the participant would deal with the email.  
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.6\linewidth]{images/phishguru.png}    
-    \caption{todo}
-    \label{fig:phishguru} 
-\end{figure}
+PhishGuru \citep{kumaraguru2008lessons} was a training program run to train employees how to identify and avoid phishing attacks. The training scheme came in the form of an email which presented a short comic strip (Figure~\ref{fig:phishguru}) that briefly went over the key red flags of a phishing email. Once this short phishing comic has been delivered to the participants, they were (secretly) sent fake phishing emails to their workplace email accounts by the creators of PhishGuru. These emails would collect data and statistics of how the participant would deal with the email. 
+
+Although this training scheme makes use of similar advice and tips for avoiding phishing, implementing it through a comic strip makes poor use of any training techniques. The complete lack of contextual information or user interaction with the training material makes this a poor attempt at best. This is even shown in the results in which only a very small difference between the control group and the group that received the training comic strip.
+
+Despite this, the experiment to test the effectiveness of the training made excellent use of context. With each of the participant receiving a fake phishing email containing all of the phishing red flags, logging the actions made by the user when dealing with the email. The use of the participants actual email client under a blind test makes great use of ecological validity within phishing training. If this had been coupled with an improved initial training scheme, the validity of the results would be much greater.
+
+\subsection{Summary of Existing Systems}
+Despite all attempting anti-phishing training, all of these systems approach the activity in very different ways. All of the systems teach the user similar phishing tactics such as typo-squatting and sound-squatting. However, in terms of context, most of the systems had poor context integration, often being to simplified (in the case of What.Hack) or virtually non-existent (PhishGuru). This shows a lack of understanding as to the best training methods when it comes to phishing, that being the importance of context for the user. 
+
+The methods of evaluation for each of these systems differed, with the game-based training programs using the in-game score as a basis for the knowledge gained for the user, and the PhishGuru making use of contextual blind phishing test emails. Although the evaluation made by the PhishGuru project is excellent in terms of its similarity to real-world phishing attacks, the time and effort required to implement a similar evaluation technique may be out of scope for this project. 
+
+A table containing an overview of the different systems with a brief analysis can be seen in Figure~\ref{fig:sum_sys}.
+
+\begin{table}[H]
+\begin{adjustwidth}{-7em}{-5em}
+\begin{tabular}{ | m{8em} | m{10em} | m{10em} | m{10em} | m{10em} | } 
+ \hline
+ \textbf{System} & \multicolumn{2}{l|}{\textbf{Phishing \& Context}} & \multicolumn{2}{l|}{\textbf{Training Effectiveness}}  \\
+ \hline
+   & \textbf{Pros} & \textbf{Cons} & \textbf{Pros} & \textbf{Cons} \\
+ \hline
+  Anti-Phishing Phil & Links are similar to those found in phishing emails & lacks ecological validity  & & Difficult to apply to real life phishing attacks 
+  \\
+ \hline
+ What.Hack & Accurate representation of real phishing attacks & Simplified and 'gamified' user experience takes away from validity & variety of knowledge gained and easily transferable to 'real world' applications & 
+  \\
+ \hline
+ PhishGuru & & Information given on phishing and attacks is extremely brief and uninformative & & Very little actual content to training and user interaction
+  \\
+ \hline
+\end{tabular}
+\end{adjustwidth}
+\caption{Brief summary of existing systems}
+\label{fig:sum_sys}
+\end{table}
+
 
 %==================================================================================================================================
 \chapter{Analysis/Requirements}
@@ -273,17 +310,100 @@ PhishGuru \citep{kumaraguru2008lessons} was a training program run to train empl
 
 %==================================================================================================================================
 \chapter{Design}
-How is this problem to be approached, without reference to specific implementation details? 
-\section{Guidance}
-Design should cover the abstract design in such a way that someone else might be able to do what you did, but with a different language or library or tool.
+\section{Initial System Architecture}
+In order to outline the system to implement, a system diagram needs to be created. As you can see below, the system architecture diagram is a three-tier diagram for each of the key elements of the application: client tier, logic tier, and database tier \citep{aarsten1996patterns}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/initial_arch.png}   
+    \caption{Initial system architecture outlining basic interactions between core systems}
+    \label{fig:initial_arch} 
+\end{figure}
+
+The client tier of the diagram gives an overview of the user interface of the application, including the different pages the user can view. The logic tier details the application backend interface or general logic. The database tier details the location of all relevant application data storage.
+\newline
+
+Between each of the tiers, there are indicators of incoming and outgoing communication between the tiers. With the client tier communication exclusively with the logic tier, and the logic tier interaction with both the client tier and the database tier. At no point does the database tier directly interact with the client tier.
+\newline
+
+The three-tier model was appropriate for this project due to the scalability and reliability of its fundamental design. Each tier is independent enough to be scaled as needed without too much impact on the other tiers. On top of this, if a single tier starts performing badly, the other tiers will not be impacted by this. All of this leads to a more efficient and faster development time.
+
+\section{Training as a Game}
+[talk about use of game mechanics as effective training]
+
+\section{Context in Design}
+The user interface for this training game must take into account key usability heuristics \citep{nielsen2005ten}. These heuristics cover a varity of principles concerning the design of user interfaces, but there are several in which play a larger part in this project. Namely, the second and sixth heuristics. The second principle is the idea that there should be a match between the system design and world of the user, that being one in which they understand all the facets of. For this project that is key in the application of context and ecological validity in terms of the transfer of learnt knowledge from the training being easily applicable to a real phishing attack. The sixth principle promotes the concept of users being able to intuitively navigate and access the program with minimal (or no) instructions. This is key in giving the user autonomy in moving up a level or replaying sections of the game.
+
+The design of the application is key to immersing the user into an accurate simulation of a phishing attack, this being an email client. There are numerous email clients on the market, the most popular being Google Mail, Microsoft Outlook, and Apple Mail \citep{emailclientlitmus}. For the Apple and Outlook clients, a similar approach in design is taken, with the list of emails on the right hand side and the full selected email display on the left. With the Google Mail client, the email list is more vertically condensed per email but takes up the entire page. Once an email is clicked, then that selected email will take up the whole page. Above these sections is a navigation bar which gives contextual options to the user (often related to the selected email). 
+
+For this application, I will attempt to combine components of the Apple Mail (Figure~\ref{fig:applemail}) and Outlook (Figure~\ref{fig:outlook}) clients as these give great overall visibility for emails. From the possible options, Microsoft Outlook was chosen as the base design of the application. This was mainly chosen due to a higher level of experience with Outlook over the other possible clients. This design will effect the colour scheme and layout of outlook.
+
+This context should also apply to the game mechanics themselves. In this sense, the player/user would simply operate the email client as they would a normal client. Therefore 'gameified' terms will not be used in the actual content of the application, for example incrememnting the levels will not be displayed to the user as a "next level" button but rather something that would make sense in the context of an email client such as "get mail". This will not only allow users to easily make use of the game but also have a more effective integration with real phishing attacks.
+
+\section{Level Progression}
+
+
+
+\section{Wireframes and Features}
+At the core design, there are several main views: the login view, the main email view without email displayed, and the main email view with an email displayed. For each of the proposed views, wireframes were created in order to hone a standardised design pattern. For the sake of user immersion and econological validity, the design of all of these screens will be in the format of an email. This includes content that could be considered immersion "breaking", such as the results screen. The user will never encounter an email like this in the real world but the consistency fo this design is paramount for the training to be effective. 
+
+
+\subsection{Main View}
+
+This is the main view that the users will spend the majority of their time navigating. In this screen, users will have a series of emails arrive, to which they need to review/analyse each email to determine whether the email is a phishing email or not. For each of the emails, the user will have a choice as to whether they should accept the email (if the user deems it as non-malicious) or if they should reject it (if the user considers it to be a phishing email). Once all of the emails in the selection have been either accepted or rejected, the user is given the option to review their decisions and progress to the next set of emails. As to the content of the emails, each email will contain text similar to those found in regular workplace emails, occasionally sporting attachments and links. However, for each of these groups of emails, several will be phishing emails, making use of the numerous phishing tactics.
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=1\linewidth]{images/main_screen_wf.png}}
+    \caption{Wireframe of the main play screen}
+    \label{fig:main_wf} 
+\end{figure}
+
+\subsection{Results View}
+As previously stated, an important part of training is giving feedback to the user giving them the opportunity to review their progress. On this screen, the user will be presented with the number of correctly identified emails (rejected phishing emails and allowed non-phishing emails) and incorrect guesses. There is also a breakdown of the incorrect guesses, that being the number of false positives (accepting phishing emails) and false negatives (rejecting non-phishing emails). From this screen, the user has two options: continue to the next level or repeat the current level in order to correct their mistakes. 
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=1\linewidth]{images/results_wf.png}}
+    \caption{Wireframe of the end of level results screen}
+    \label{fig:results_wf} 
+\end{figure}
+
+\subsection{Menus \& Additional Views}
+The main menu (as shown in Figure~\ref{fig:menu_wf}) will provide the user with numerous options for both new and returning users. New users will be prompted to take the tutorial which will guide the user on how to "play" the training game and key aspects of the interface. For each of the levels there will be a button to instantly start the game at the specified level.
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=1\linewidth]{images/menu_wf.png}}
+    \caption{Wireframe of main menu screen}
+    \label{fig:menu_wf} 
+\end{figure}
 
 %==================================================================================================================================
 \chapter{Implementation}
+
+\section{Application Base}
+As a result of the descision to emulate Microsoft's Outlook email client, the obvious choice for development/design would be a web-based application. This not only fulfills the requirements set out by the user stories in terms of ease of installation and accessible from multiple device types, but would also be accurate to the core philosophy of emulating an environment in which phishing attacks occur.
+
+\section{Technologies}
+
+\section{Site Map}
+
+\section{Development}
+
+\section{Changes Made}
+
+\section{Challenges Faced}
+
+\section{Final Product}
+
+
+
+
+
 What did you do to implement this idea, and what technical achievements did you make?
 \section{Guidance}
 You can't talk about everything. Cover the high level first, then cover important, relevant or impressive details.
-
-
 
 \section{General points}
 
@@ -560,6 +680,45 @@ Typical inclusions in the appendices are:
 
 \textbf{Don't include your source code in the appendices}. It will be
 submitted separately.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.1\linewidth]{images/whathack_1.png}    
+    \caption{What.Hack main game screen with advisor giving player tips on the contents of the email, pointing out the use of typo-squatting and URL manipulation}
+    \label{fig:whathack_1} 
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.1\linewidth]{images/whathack_2.png}    
+    \caption{What.Hack main game screen with showing the buttons and available actions given to the player}
+    \label{fig:whathack_2} 
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/antiphishingphil.png}   
+    \caption{Anti-Phishing Phil game screen with the player fish interacting with a worm holding a URL, with the fish advisor giving advice to the player}
+    \label{fig:antiphishingphil} 
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.1\linewidth]{images/phishguru.png}    
+    \caption{The PhishGuru comic strip giving general tips to avoid phishing attacks }
+    \label{fig:phishguru} 
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.1\linewidth]{images/outlook.png}
+    \caption{Outlook email client}
+    \label{fig:outlook}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=1.1\linewidth]{images/applemail.png}
+    \caption{Apple Mail desktop email client}
+    \label{fig:applemail}
+\end{figure}
+
 
 \end{appendices}
 
