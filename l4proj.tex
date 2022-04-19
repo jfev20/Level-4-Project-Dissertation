@@ -18,21 +18,16 @@
 
 %==============================================================================
 %% METADATA
-\title{Context Relevant Anti-Phishing Training }
+\title{Gone Phishing: A Context Relevant Anti-Phishing Training Game }
 \author{Joel Feven}
-\date{September 14, 2022}
+\date{April 9, 2022}
 
 \maketitle
 
 %==============================================================================
 %% ABSTRACT
 \begin{abstract}
-    Every abstract follows a similar pattern. Motivate; set aims; describe work; explain results.
-    \vskip 0.5em
-    ``XYZ is bad. This project investigated ABC to determine if it was better. 
-    ABC used XXX and YYY to implement ZZZ. This is particularly interesting as XXX and YYY have
-    never been used together. It was found that  
-    ABC was 20\% better than XYZ, though it caused rabies in half of subjects.''
+
 \end{abstract}
 
 %==============================================================================
@@ -86,123 +81,91 @@
 \pagenumbering{arabic} 
 
 
-Why should the reader care about what are you doing and what are you actually doing?
-\section{Guidance}
-
-\textbf{Motivate} first, then state the general problem clearly. 
-
-\section{Writing guidance}
-\subsection{Who is the reader?}
-
-This is the key question for any writing. Your reader:
-
-\begin{itemize}
-    \item
-    is a trained computer scientist: \emph{don't explain basics}.
-    \item
-    has limited time: \emph{keep on topic}.
-    \item
-    has no idea why anyone would want to do this: \emph{motivate clearly}
-    \item
-    might not know \emph{anything} about your project in particular:
-    \emph{explain your project}.
-    \item
-    but might know precise details and check them: \emph{be precise and
-    strive for accuracy.}
-    \item
-    doesn't know or care about you: \emph{personal discussions are
-    irrelevant}.
-\end{itemize}
-
-Remember, you will be marked by your supervisor and one or more members
-of staff. You might also have your project read by a prize-awarding
-committee or possibly a future employer. Bear that in mind.
-
-\subsection{References and style guides}
-There are many style guides on good English writing. You don't need to
-read these, but they will improve how you write.
-
-\begin{itemize}
-    \item
-    \emph{How to write a great research paper} \cite{Pey17} (\textbf{recommended}, even though you aren't writing a research paper)
-    \item
-    \emph{How to Write with Style} \cite{Von80}. Short and easy to read. Available online.
-    \item
-    \emph{Style: The Basics of Clarity and Grace} \cite{Wil09} A very popular modern English style guide.
-    \item
-    \emph{Politics and the English Language} \cite{Orw68}  A famous essay on effective, clear writing in English.
-    \item
-    \emph{The Elements of Style} \cite{StrWhi07} Outdated, and American, but a classic.
-    \item
-    \emph{The Sense of Style} \cite{Pin15} Excellent, though quite in-depth.
-\end{itemize}
-
-\subsubsection{Citation styles}
-
-\begin{itemize}
-\item If you are referring to a reference as a noun, then cite it as: ``\citet{Orw68} discusses the role of language in political thought.''
-\item If you are referring implicitly to references, use: ``There are many good books on writing \citep{Orw68, Wil09, Pin15}.''
-\end{itemize}
-\subsection{Plagiarism warning}
-
-\begin{highlight_title}{WARNING}
-    
-    If you include material from other sources without full and correct attribution, you are commiting plagiarism. The penalties for plagiarism are severe.
-    Quote any included text and cite it correctly. Cite all images, figures, etc. clearly in the caption of the figure.
-\end{highlight_title}
-
 
 %==================================================================================================================================
 \chapter{Background}
 
 \section{What is Phishing?}
-With the rise of technology and computer-based solutions, many corporations around the world rely on computers for data storage, analysis, and communication. However, this has one fatal flaw: people are required to operate the vast majority of this technology. This has led to a large number of cyber-attacks directed towards the person behind the screen rather than the device itself, mainly through an attack known as “phishing”.
+With the rise of technology and computer-based solutions, the vast majority of corporations around the world rely on computers for data storage, analysis, and communication. However, this has one fatal flaw: \textit{people} are required to operate the vast majority of this technology. This has led to a large number of cyber-attacks directed towards the person behind the screen rather than the device itself, mainly through an attack known as “phishing”. The huge scale of the problem is shown by Oest et al. who states that between 2016-2017 over 1.9 billion user credentials were stolen through means of phishing \citep{oest2018inside}.
 
-Phishing is a type of attack that makes use of social engineering to coerce users into giving personal information over to these attackers, known as “phishers”. This can be done with varying degrees of complexity, from generic widespread “spam” emails to user specific, personalised attacks (also known as “spear phishing”). When spear phishing targets a highly influential person within a company, this can be known as “whaling” due to the large return of data/credentials/access from the company. In Q4 2016, the Anti-Phishing Working Group (APWG) found that each month there were around 90,000 phishing attacks which was an increase of 5753\% of average phishing attacks from the last 12 years \citep{apwg2017phishing}. However, phishing is not limited to exclusively emails. Phishing can be performed in a wide variety of methods and on different platforms such as social media and instant messaging services. As long as the user is exploited to perform an action or relay sensitive information, the attack is considered a phishing attack.
+Phishing is a type of attack that makes use of social engineering to coerce users into giving personal information over to these attackers, known as “phishers”. As Parsons et al. finds, phishers make use of social engineering to convince a victim that they are legitimate and trustworthy in order to extract information or carry out further attacks \citep{parsons2019predicting}. This can be done with varying degrees of complexity, from generic widespread “spam” emails to user specific, personalised attacks (also known as “spear phishing”). 
+
+When spear phishing targets a highly influential person within a company (or an employee with access to a large amount of data/information), this can be known as “whaling” due to the large return of data/credentials/access from the company. In Q4 2016, the Anti-Phishing Working Group (APWG) found that each month there were around 90,000 phishing attacks, an increase of 5753\% of average phishing attacks from the last 12 years \citep{apwg2017phishing}. However, phishing is not limited to emails, it can be performed in a wide variety of methods and on different platforms such as social media and instant messaging services. As long as the user is exploited to perform an action or relay sensitive information, the attack is considered a phishing attack.
+
+\subsection{Why is Phishing Worth Investigating?}
+Phishing is a large problem, as shown by the Security Boulevard phishing report which stated that around 88\% of the organisations monitored reported spear-phishing attacks \citep{bhardwaj2020phishing}. This goes to show that phishing is widespread and (due to the rising technological infrastructure requirement) commonplace in many businesses and industries. Therefore it is key to train \textbf{all} employees and freelancers techniques to combat phishing attacks, no matter there technological skillset. Those without prior knowledge of phishing are often the easiest targets for phishing attacks so it is imperative to prevent these weaknesses in the workplace.
 
 \subsection{Tactics}
 \label{sec:other_tactics}
+Numerous tactics are used in the implementation of phishing attacks, although there are two core strategies: \textbf{user vulnerabilities} and \textbf{email contextualisation} \citep{nicho2018evaluating}. User vulnerabilities often include making use of deceptive psychological tactics (simplifying actions the user could make, misrepresenting data, etc.) to mislead users no matter their technical ability. Email contextualisation is when the phishing email is constructed in such a way that has been tailored to the targeted user so it doesn't seem out of place. This is often used alongside suggestions of urgency when dealing with the email and deceiving the user into believing the email comes from an authority figure.
 
-Phishing often makes use of vulnerabilities within browsers. By convincing the user to perform a specified action, this can enable the phisher to take advantage of a number of exploits. URL links are commonly used in phishing emails, often with an urgent prompt for the user to click the link. These URLs can be obfuscated by phishers through several means, although most often it is through sound-squatting and typo-squatting \citep{chiew2018survey}. Both are methods of URL manipulation to trick the user into thinking the URL is recognisable and/or legitimate. Sound-squatting is the technique of changing the domain names of websites to sound similar to legitimate domains, often making use of homonyms to confuse the user (e.g. www.ryanairways.com to www.ryanheirways.com). Typo-squatting uses a similar technique but uses domains with intentional typos to trick the user (e.g. www.anazon.com). This can also be used to “phish” users that genuinely make a typo when entering the URL address of a legitimate website.
+By convincing the user to perform a specified action, this can enable the phisher to take advantage of a number of exploits. URL links are commonly used in phishing emails, often with an urgent prompt for the user to click the link. These URLs can be obfuscated by phishers through several means, although most often it is through sound-squatting and typo-squatting \citep{chiew2018survey}. Both are methods of user vulnerabilities through URL manipulation to trick the user into thinking the URL is recognisable and/or legitimate. Sound-squatting is the technique of changing the domain names of websites to sound similar to legitimate domains, often making use of homonyms to confuse the user (e.g. \textit{www.ryanairways.com} to \textit{www.ryanheirways.com}). Typo-squatting uses a similar technique but uses domains with intentional typos to trick the user (e.g. \textit{www.anazon.com}).
 
-These links will redirect users to compromised webpages that can take advantage of the user’s device in a number of ways. Websites can use cross-site scripting attacks and SQL injections to inject harmful code into the user’s device to potentially access data stored. However, the entire website doesn’t not need to be custom made by the phisher and instead the malicious URL could be used to impose a malicious element on top of the legitimate website, this is known as HTML substitution \citep{chiew2018survey}.
+These links will redirect users to compromised webpages that can take advantage of the user’s device in a number of ways. Websites can use cross-site scripting attacks and SQL injections to deploy harmful code into the user’s device to potentially access stored data. However, the entire website doesn’t not need to be custom made by the phisher and instead the fake URL could be used to impose a malicious element on top of the legitimate website, known as HTML substitution \citep{chiew2018survey}.
 
 \subsection{Targets of Phishing}
-
-\subsection{Why is Phishing Worth Investigating?}
+For a successful phishing attack to occur, the targets of the attack need to be very particular (especially in a spear-phishing campaign). The assumption is that the targets of phishing are often the ones with the most access to valuable data and financial resources, most often businesses. Although this is not entirely false, phishers can be devious in their attacks by not targeting the "higher-ups" within a business. A spear phishing campaign can be launched on the "lower end"/ less-technical employees (e.g. Human Resources Department) within the business in order to infiltrate the business as a starting point. Once infiltrated, the phisher can then deploy any attacks they wish to execute on the more lucrative echelons of the business. This can be seen in the Operation Aurora attacks, in which employees within the Human Resources departments of numerous businesses with targeted with a phishing email, giving access to the larger business  \citep{bodmer2012reverse}.
 
 \section{Context in Phishing}
-
-The most successful types of phishing are often the most personalised, context-based attacks. These are often aimed at very specific people/departments within major companies making use of context-relevant names and details. For example, one such attack is the 2010 Kneber botnet attacks on government systems \citep{villeneuve2010kneber}. These attacks made use of security-based blog posts as content for emails that prompted users to download and install a Microsoft Windows security system fix. Once downloaded, this malware would not only extract data but also installed additional software to crack and extract military documents. A total of 81 computers were found to be infected with around 1533 confidential/sensitive documents stolen. The main threat of spear phishing is how convincing the email/communication may seem from the point of view of the victim, often making use of a need for urgency and specific contextual knowledge \citep{nicho2018evaluating}.
+The most successful types of phishing are often the most personalised, context-based attacks. These are often aimed at very specific people/departments within major companies making use of context-relevant names and details, most often banks and other large scale businesses \citep{tally2004anti}. As a result of this demographic, the majority of "context" that is used within these phishing attacks is business-related contextual emails. For example, one such attack is the 2010 Kneber botnet attacks on government systems \citep{villeneuve2010kneber}. These attacks made use of security-based blog posts as content for emails that prompted users to download and install a Microsoft Windows security system fix. Once downloaded, this would not only extract data but also installed additional software to crack and extract military documents. A total of 81 computers were found to be infected with around 1533 confidential/sensitive documents stolen. The main threat of spear phishing is how convincing the email/communication may seem from the point of view of the victim, often making use of a need for urgency and specific contextual knowledge \citep{nicho2018evaluating}.
 
 
 \section{Effective Training}
+A critical element of this application is to implement effective use of training. Training methods can often be split into two main categories: traditional (non-embedded) training and embedded training. Traditional training is simply giving the user/trainee the information required for them to learn a set of skills. Embedded training (also known as contextualised learning) is the process of integrating training within the trainees regular routine, giving the training a greater level of application to real-world situations and enviroments (known as ecological validity). When applied to anti-phishing training this often results in sending users/participants pseudo-phishing emails that report the actions they take. As shown by Caputo et al., training is often less efficient, or even totally ignored, when delivered using traditional training techniques \citep{caputo2014embedded}. From their experiments, Caputo et al. found that very few participants actually read the training sheet and a number of participants who did read the training sheet still clicked on the phishing emails. From this research, it is clear that the application must focus on a greater level of embedded training techniques. However, completely embedded training may be out of scope of this project and so a middle ground must be made between traditional and embedded training. In order to achieve this, a simulated environment in which emails are recieved alongside non-embedded training must be created to effectively train users in anti-phishing.
 
 
 \section{Related Systems}
-Due to the popularity of phishing, many different attempts at anti-phishing training have been made before. From these, there are a few key systems that attempt to make use of both user interaction and context in phishing. The user interaction put foward by the following systems are key in effective training especially in avoid phishing attacks.
+Due to the popularity of phishing, many different attempts at anti-phishing training have been made before. From these, some systems are devoid of context entirely whereas a few systems attempt to make use of both user interaction and context in phishing. The user interaction put foward by the following systems are key in effective training especially in avoid phishing attacks.
 
 \subsection{Anti-Phishing Phil}
-Anti-Phishing Phil \citep{sheng2007anti} is an online educational game that attempts to teach players how to successfully avoid phishing attacks. This is done mainly by teaching them how to identify red flags and tells given by phishing emails and URLs. The game itself gets the player to take the role of ‘Phil’ a fish who is attempting to eat as many worms as possible, as shown in Figure~\ref{fig:antiphishingphil}. Each worm is paired with a URL which is potentially malicious, and the player must decide whether to eat the worm/URL (therefore considering it to be legitimate) or reject the worm/URL (considering it to be a phishing URL). If the player is stuck, they can ask for help from Phil’s father who will give them hints as to the nature of URL. 
+Anti-Phishing Phil \citep{sheng2007anti} is an online educational game that attempts to teach players how to successfully avoid phishing attacks. This is done mainly by teaching them how to identify red flags and tells given by phishing emails and URLs. The game itself gets the player to take the role of ‘Phil’ a fish who is attempting to eat as many worms as possible, as shown in Figure~\ref{fig:antiphishingphil}. Each worm is paired with a URL which is potentially malicious, and the player must decide whether to eat the worm/URL, therefore considering it to be legitimate, or reject the worm/URL, considering it to be a phishing URL. If the player is stuck, they can ask for help from Phil’s father who will give them hints as to the nature of URL. 
 
 Although this may be helpful in teaching the key methods to detecting and avoiding phishing attacks, the complete lack of context takes away any benefits this training program might provide. As a result of this, the users will have difficulty applying the knowledge learned to any real-life situations. 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/antiphishingphil.png}   
+    \caption{Anti-Phishing Phil game screen with the player fish interacting with a worm holding a URL, with the fish advisor giving advice to the player}
+    \label{fig:antiphishingphil} 
+\end{figure}
+
 \subsection{What.Hack}
-What.Hack \citep{wen2019hack} is student project to create an anti-phishing training game in which players have to discern phishing emails from legitimate emails. The game takes the form of an (extremely simplified) email client. Once the user has made a choice, they must click either the accept or reject buttons based on their guess. For additional help the user can ask an in-game advisor to give hints, as show in Figure~\ref{fig:whathack_1}. On top of the advisor, the players can access a ‘rulebook’, giving them a series of rules/guidelines to follow to determine if an email is malicious. This application applies a much greater level of context to the simulated phishing attacks, from the actual design of the user experience  right through to the content of the actual emails. 
+What.Hack \citep{wen2019hack} is a student project to create an anti-phishing training game in which players have to discern phishing emails from legitimate emails. The game takes the form of an (extremely simplified) email client. Once the user has made a choice, they must click either the accept or reject buttons based on their guess. For additional help the user can ask an in-game advisor to give hints, as show in Figure~\ref{fig:whathack_1}. On top of this, the players can access a ‘rulebook’, giving them a series of guidelines to follow to determine if an email is malicious. This application applies a much greater level of context to the simulated phishing attacks, from the actual design of the user experience right through to the content of the emails. 
 
 Framing the game itself to take the form of an email client gives the player a greater frame of reference for what actual phishing attacks look like 'out in the wild'. However, the design of the client has been streamlined to the point of losing key elements of the contextual value of framing it as a email client. As shown in Figure~\ref{fig:whathack_2}, each of the emails contains 'Submit Phishing' and 'Allow Entry' buttons. For the regular phishing victim, these buttons do not exist within standard email clients and the 'gamification' of these elements only depreciates the important contextual value that a similar product might hold.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/whathack_1.png}    
+    \caption{What.Hack main game screen with advisor giving player tips on the contents of the email, pointing out the use of typo-squatting and URL manipulation}
+    \label{fig:whathack_1} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/whathack_2.png}    
+    \caption{What.Hack main game screen with showing the buttons and available actions given to the player}
+    \label{fig:whathack_2} 
+\end{figure}
+
 \subsection{PhishGuru}
-PhishGuru \citep{kumaraguru2008lessons} was a training program run to train employees how to identify and avoid phishing attacks. The training scheme came in the form of an email which presented a short comic strip (Figure~\ref{fig:phishguru}) that briefly went over the key red flags of a phishing email. Once this short phishing comic has been delivered to the participants, they were (secretly) sent fake phishing emails to their workplace email accounts by the creators of PhishGuru. These emails would collect data and statistics of how the participant would deal with the email. 
+PhishGuru \citep{kumaraguru2008lessons} was a training program run to train employees how to identify and avoid phishing attacks. The training scheme came in the form of an email which presented a short comic strip (Figure~\ref{fig:phishguru}) that briefly went over the key red flags of a phishing email. Once this short phishing comic has been delivered to the participants, they were secretly sent fake phishing emails to their workplace email accounts by the creators of PhishGuru. These emails would collect data and statistics of how the participant would deal with the email. 
 
-Although this training scheme makes use of similar advice and tips for avoiding phishing, implementing it through a comic strip makes poor use of any training techniques. The complete lack of contextual information or user interaction with the training material makes this a poor attempt at best. This is even shown in the results in which only a very small difference between the control group and the group that received the training comic strip.
+Although this training scheme makes use of similar advice and tips for avoiding phishing, implementing it through a comic strip makes poor use of any training techniques. The complete lack of contextual information or user interaction with the training material makes this an inadequate attempt at anti-phishing training. This is shown in the results in which only a very small difference between the control group and the group that received the training comic strip.
 
-Despite this, the experiment to test the effectiveness of the training made excellent use of context. With each of the participant receiving a fake phishing email containing all of the phishing red flags, logging the actions made by the user when dealing with the email. The use of the participants actual email client under a blind test makes great use of ecological validity within phishing training. If this had been coupled with an improved initial training scheme, the validity of the results would be much greater.
+Despite this, the experiment to test the effectiveness of the training made excellent use of context. With each of the participant receiving a fake phishing email containing all of the phishing red flags, logging the actions made by the user when dealing with the email. The use of the participants actual email client under a blind test makes great use of ecological validity within phishing training. If this had been coupled with an improved initial training scheme, the validity and quality of the results would be much greater.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/phishguru.png}    
+    \caption{The PhishGuru comic strip giving general tips to avoid phishing attacks }
+    \label{fig:phishguru} 
+\end{figure}
 
 \subsection{Summary of Existing Systems}
-Despite all attempting anti-phishing training, all of these systems approach the activity in very different ways. All of the systems teach the user similar phishing tactics such as typo-squatting and sound-squatting. However, in terms of context, most of the systems had poor context integration, often being to simplified (in the case of What.Hack) or virtually non-existent (PhishGuru). This shows a lack of understanding as to the best training methods when it comes to phishing, that being the importance of context for the user. 
+Despite the similarities in objectives, all of these systems approach the training in very different ways. All of the systems teach the user similar phishing tactics such as typo-squatting and sound-squatting. However, in terms of context, most of the systems had poor context integration, often being too simplified (in the case of What.Hack) or virtually non-existent (PhishGuru). This shows a lack of understanding as to the best training methods when it comes to phishing, that being the importance of context for the user. 
 
-The methods of evaluation for each of these systems differed, with the game-based training programs using the in-game score as a basis for the knowledge gained for the user, and the PhishGuru making use of contextual blind phishing test emails. Although the evaluation made by the PhishGuru project is excellent in terms of its similarity to real-world phishing attacks, the time and effort required to implement a similar evaluation technique may be out of scope for this project. 
+The methods of evaluation for each of these systems differed, with the game-based training programs using the in-game score as a basis for the knowledge gained for the user, and the PhishGuru making use of contextual blind phishing test emails. Although the evaluation made by the PhishGuru project is excellent in terms of its similarity to real-world phishing attacks, the time required to implement a similar evaluation technique may be out of scope for this project. 
 
 A table containing an overview of the different systems with a brief analysis can be seen in Figure~\ref{fig:sum_sys}.
 
@@ -210,7 +173,7 @@ A table containing an overview of the different systems with a brief analysis ca
 \begin{adjustwidth}{-7em}{-5em}
 \begin{tabular}{ | m{8em} | m{10em} | m{10em} | m{10em} | m{10em} | } 
  \hline
- \textbf{System} & \multicolumn{2}{l|}{\textbf{Phishing \& Context}} & \multicolumn{2}{l|}{\textbf{Training Effectiveness}}  \\
+ \textbf{System} & \multicolumn{2}{l|}{\textbf{Phishing \& Context}} & \multicolumn{2}{l|}{\textbf{Quality of Training Methods}}  \\
  \hline
    & \textbf{Pros} & \textbf{Cons} & \textbf{Pros} & \textbf{Cons} \\
  \hline
@@ -232,13 +195,14 @@ A table containing an overview of the different systems with a brief analysis ca
 
 %==================================================================================================================================
 \chapter{Analysis/Requirements}
+[intro]
 
 \section{User Stories}
-\textbf{Matt} is a bank manager and manages multiple teams within the department. Due to the rise in internet-based attacks, he wants to train his staff for the different types of attacks they may face, one of these being phishing attacks. Matt wants to give his staff regular anti-phishing training exercises that they can complete at work or at home. Due to workplace regulations and computer safety, he cannot install any software on the work computers so must have a training program that can run in a web browser. He wants to easily be able to see his employees progress, including what they are consistently missing/failing at and what their strengths are. 
+\textbf{Matt} is a bank manager and manages multiple teams within the department. Due to the rise in internet-based attacks, he wants to train his staff for the different types of attacks they may face, one of these being phishing attacks. Matt wants to give his staff regular anti-phishing training exercises that they can complete at work or at home. Due to workplace regulations and computer safety, he cannot install any software on the work computers so must have a training program that can run in a web browser. He wants to easily be able to see his employee's progress, including what they are consistently failing at and what their strengths are. 
 
-\textbf{Thomas} is an employee in the software development department on company. They have plenty of technical experience and wish to keep up to date with the latest anti-phishing training techniques. He wants to be able to avoid the basic “tutorial” type training and go straight into the more technical, in-depth training. Thomas would be willing to install any type of training software as it would be easy for him to do. 
+\textbf{Thomas} is a team manager in the software development department for a large company. His team have plenty of technical experience and wish to keep up to date with the latest anti-phishing training techniques. He wants to be able to avoid the basic “tutorial” type training and go straight into the more technical, in-depth training. Thomas would be willing to install any type of training software as it would be easy for him to do. 
 
-\textbf{Sophie} is an employee for the human resources department of a company. They have little to no technical experience outside of operating their email client and similar tasks. Due to recent phishing attacks, they have been instructed to learn about phishing and methods to prevent successful attacks. Due to their lack of experience, they need every aspect of phishing explained in detail for the training to work successfully. Due to the amount of emails she receives, she needs lots of varied examples of common signposts of phishing emails. Her lack of proficiency in technology means she requires something that does not need to be install or have any complex set-up, preferably something she can use in her browser.
+\textbf{Sophie} is an employee for the human resources department of a company. They have little to no technical experience outside of operating their email client and similar tasks. Due to recent phishing attacks, they have been instructed to learn about phishing and methods to prevent successful attacks. Due to their lack of experience, they need every aspect of phishing explained in detail for the training to work successfully. Due to the amount of emails she receives, she needs lots of varied examples of common signposts of phishing emails. Her lack of proficiency in technology means she requires something that does not need to be installed or have any complex set-up, preferably something she can use in her browser.
 
 \section{Functional Requirements}
 \subsection{Must Have}
@@ -248,13 +212,13 @@ A table containing an overview of the different systems with a brief analysis ca
   \hline
   Training & This application must train the user in anti-phishing practices as per the product description &  \\ 
   \hline
-  Fail States & The user must be able to pass or fail tasks based on their input as this would be effective training &  \\ 
+  Fail States & Effective training would entail the user must be able to pass or fail tasks based on their input &  \\ 
   \hline
   Context in Design & The application must make effective use of context within the look/feel of the application itself as well as the tasks given to the user &  \\  
   \hline
   Context in Content & The application must make use of different levels of context within the actual content of the exercises the user needs to perform &  \\  
   \hline
-  Broad representation & This application must display a broad range of different types of phishing to the user, teaching them methods to detect and avoid these different types &  \\  
+  Broad representation & This application must display a broad range of different types of phishing to the user, teaching them methods in detection and avoidance &  \\  
   \hline
 \end{tabular}
 
@@ -265,7 +229,7 @@ A table containing an overview of the different systems with a brief analysis ca
   \hline
   Reflection & The application should be able to report the user’s progress through the training, including their weakest and strongest points &  \\ 
   \hline
-  Immersion & The user should fine the application easy to immerse themselves in the game in terms of familiarity and comfortability  &  \\ 
+  Immersion & The user should find the application immersive in terms of familiarity and comfortability with the technologies they use on a regular basis &  \\ 
   \hline
   Assistance & The application should assist the user as much as possible without giving them the answer (if the user is struggling with the task) &  \\ 
   \hline
@@ -289,7 +253,7 @@ A table containing an overview of the different systems with a brief analysis ca
   \hline
   \textbf{Requirement} & \textbf{Description} & \textbf{Reference} \\ 
   \hline
-  User History & The application would benefit from a form of training history for each user to view progress over time &  \\ 
+  User History & The application would benefit from a form of training history for each user to view their progress over time &  \\ 
   \hline
 \end{tabular}
 
@@ -310,12 +274,14 @@ A table containing an overview of the different systems with a brief analysis ca
 
 %==================================================================================================================================
 \chapter{Design}
+[intro]
+
 \section{Initial System Architecture}
-In order to outline the system to implement, a system diagram needs to be created. As you can see below, the system architecture diagram is a three-tier diagram for each of the key elements of the application: client tier, logic tier, and database tier \citep{aarsten1996patterns}. 
+As an initial design step, a system diagram needs to be created. As you can see below, the system architecture diagram is a three-tier diagram for each of the key elements of the application: client tier, logic tier, and database tier \citep{aarsten1996patterns}. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{images/initial_arch.png}   
+    \frame{\includegraphics[width=0.9\linewidth]{images/initial_arch.png}}  
     \caption{Initial system architecture outlining basic interactions between core systems}
     \label{fig:initial_arch} 
 \end{figure}
@@ -323,34 +289,39 @@ In order to outline the system to implement, a system diagram needs to be create
 The client tier of the diagram gives an overview of the user interface of the application, including the different pages the user can view. The logic tier details the application backend interface or general logic. The database tier details the location of all relevant application data storage.
 \newline
 
-Between each of the tiers, there are indicators of incoming and outgoing communication between the tiers. With the client tier communication exclusively with the logic tier, and the logic tier interaction with both the client tier and the database tier. At no point does the database tier directly interact with the client tier.
+Between each of the tiers, there are indicators of incoming and outgoing communication between the tiers. With the client tier communication exclusively with the logic tier, and the logic tier interaction with both the client tier and the database tier. At no point does the database tier interact directly with the client tier.
 \newline
 
-The three-tier model was appropriate for this project due to the scalability and reliability of its fundamental design. Each tier is independent enough to be scaled as needed without too much impact on the other tiers. On top of this, if a single tier starts performing badly, the other tiers will not be impacted by this. All of this leads to a more efficient and faster development time.
+The three-tier model was appropriate for this project due to the scalability and reliability of its fundamental design. Each tier is independent enough to be scaled as needed without too much impact on the other tiers. In addition, if a single tier starts underperforming or fails, the other tiers will not be impacted by this and continue to operate. All of this leads to a more efficient and faster development time.
 
 \section{Training as a Game}
-[talk about use of game mechanics as effective training]
+Effective training requires a greater level of user interaction which is interlinked with an environment which simulates a real life attack. A fully embedded training scheme would be out of scope for this project but a simulated environment with fake emails and phishing attacks would be the best solution. A training game seems to be the logical extension of this, similar to the What.Hack and Anti-Phishing Phil training games, but would obviously attempt to improve on the existing systems. The mechanics of the game would have to abide by a strict rule of contextual awareness whereby it would treat itself as a standard email client with little to no reference to the simulation or make use of gamified terminology (such as "Levels" or "Points").
 
 \section{Context in Design}
-The user interface for this training game must take into account key usability heuristics \citep{nielsen2005ten}. These heuristics cover a varity of principles concerning the design of user interfaces, but there are several in which play a larger part in this project. Namely, the second and sixth heuristics. The second principle is the idea that there should be a match between the system design and world of the user, that being one in which they understand all the facets of. For this project that is key in the application of context and ecological validity in terms of the transfer of learnt knowledge from the training being easily applicable to a real phishing attack. The sixth principle promotes the concept of users being able to intuitively navigate and access the program with minimal (or no) instructions. This is key in giving the user autonomy in moving up a level or replaying sections of the game.
+The user interface for this training game must take into account key usability heuristics \citep{nielsen2005ten}. These heuristics cover a variety of principles concerning the design of user interfaces, but there are several which play a larger part in this project, namely the second and sixth heuristics. The second principle states there should be a match between the system design and the world of the user, that which they inherently understand. This is key in the application of context and ecological validity in terms of the transfer of learnt knowledge from the training being easily applicable to a real phishing attack. The sixth principle promotes the concept of users being able to intuitively navigate and access the program with minimal (or no) instructions. This gives the user autonomy in moving up a level or replaying sections of the game.
 
-The design of the application is key to immersing the user into an accurate simulation of a phishing attack, this being an email client. There are numerous email clients on the market, the most popular being Google Mail, Microsoft Outlook, and Apple Mail \citep{emailclientlitmus}. For the Apple and Outlook clients, a similar approach in design is taken, with the list of emails on the right hand side and the full selected email display on the left. With the Google Mail client, the email list is more vertically condensed per email but takes up the entire page. Once an email is clicked, then that selected email will take up the whole page. Above these sections is a navigation bar which gives contextual options to the user (often related to the selected email). 
+The design of the application is key to immersing the user into an accurate simulation of a phishing attack, this being an email client. There are numerous email clients on the market, the most popular being Google Mail, Microsoft Outlook, and Apple Mail \citep{emailclientlitmus}. For the Apple and Outlook clients, a similar approach in design is taken, with the list of emails on the right hand side and the full selected email display on the left. With the Google Mail client, the email list is more vertically condensed per email but takes up the entire page. Once an email is clicked, the selected email will take up the whole page. Above these sections is a navigation bar which gives contextual options to the user (often related to the selected email). 
 
 For this application, I will attempt to combine components of the Apple Mail (Figure~\ref{fig:applemail}) and Outlook (Figure~\ref{fig:outlook}) clients as these give great overall visibility for emails. From the possible options, Microsoft Outlook was chosen as the base design of the application. This was mainly chosen due to a higher level of experience with Outlook over the other possible clients. This design will effect the colour scheme and layout of outlook.
 
-This context should also apply to the game mechanics themselves. In this sense, the player/user would simply operate the email client as they would a normal client. Therefore 'gameified' terms will not be used in the actual content of the application, for example incrememnting the levels will not be displayed to the user as a "next level" button but rather something that would make sense in the context of an email client such as "get mail". This will not only allow users to easily make use of the game but also have a more effective integration with real phishing attacks.
+This context should also apply to the game mechanics themselves. In this sense, the player/user would simply operate the email client as they would a normal client. Therefore 'gamified' terms will not be used in the actual content of the application, for example incrementing the levels will not be displayed to the user as a "next level" button. Instead making use of terms that would make sense in the context of a workplace email client such as "get mail". This will not only allow users to easily make use of the game but also have a more effective integration with real phishing attacks.
 
 \section{Level Progression}
-
+Being a game, level progression is a key element of the design process. If the training features work as intended, each level should layer new (and increasingly difficult) phishing techniques. This process of gradually introducing phishing techniques should effectively build up a knowledge base for the user to apply to real world phishing attacks. Each level has a planned feature to be implemented, as shown below:
+\begin{itemize}
+    \item Level One: Very obvious attempts at phishing attacks with clearly suspicious email content
+    \item Level Two: Phishing emails begin to use links while becoming slightly more inconspicuous 
+    \item Level Three: Phishing emails make use of both links and attachments with relevant workplace email content
+    \item Level Four: Phishing emails become very difficult to detect by impersonating other members of staff and departments while also using links and attachments
+\end{itemize}
 
 
 \section{Wireframes and Features}
-At the core design, there are several main views: the login view, the main email view without email displayed, and the main email view with an email displayed. For each of the proposed views, wireframes were created in order to hone a standardised design pattern. For the sake of user immersion and econological validity, the design of all of these screens will be in the format of an email. This includes content that could be considered immersion "breaking", such as the results screen. The user will never encounter an email like this in the real world but the consistency fo this design is paramount for the training to be effective. 
+There are several main views within the core design: the login view, the main email view without email displayed, and the main email view with an email displayed. Wireframes were created for each of these views in order to hone a standardised design pattern. The design of all of these screens will be in the format of an email, for the sake of user immersion and ecological validity. This includes content that could be considered immersion "breaking", such as the results screen. The user will never encounter an email like this in the real world but the consistency of this design is paramount for the training to be effective. 
 
 
 \subsection{Main View}
-
-This is the main view that the users will spend the majority of their time navigating. In this screen, users will have a series of emails arrive, to which they need to review/analyse each email to determine whether the email is a phishing email or not. For each of the emails, the user will have a choice as to whether they should accept the email (if the user deems it as non-malicious) or if they should reject it (if the user considers it to be a phishing email). Once all of the emails in the selection have been either accepted or rejected, the user is given the option to review their decisions and progress to the next set of emails. As to the content of the emails, each email will contain text similar to those found in regular workplace emails, occasionally sporting attachments and links. However, for each of these groups of emails, several will be phishing emails, making use of the numerous phishing tactics.
+This is the main view that the users will spend the majority of their time navigating. In this screen, users will have a series of emails arrive, where they need to review/analyse each email to determine whether the email is a phishing attack or not. For each of the emails, the user will have a choice as to whether they should accept the email (if the user deems it as non-malicious) or if they should reject it (if the user considers it to be a phishing email). Once all of the emails in the selection have been either accepted or rejected, the user is given the option to review their decisions and progress to the next set of emails. Each email will contain text similar to those found in regular workplace emails, occasionally sporting attachments and links. However, for each of these groups of emails, several will be phishing emails, making use of the numerous phishing tactics.
 
 \begin{figure}[H]
     \centering
@@ -360,7 +331,7 @@ This is the main view that the users will spend the majority of their time navig
 \end{figure}
 
 \subsection{Results View}
-As previously stated, an important part of training is giving feedback to the user giving them the opportunity to review their progress. On this screen, the user will be presented with the number of correctly identified emails (rejected phishing emails and allowed non-phishing emails) and incorrect guesses. There is also a breakdown of the incorrect guesses, that being the number of false positives (accepting phishing emails) and false negatives (rejecting non-phishing emails). From this screen, the user has two options: continue to the next level or repeat the current level in order to correct their mistakes. 
+Giving feedback in an important part of training because it provides the user with the opportunity to review their progress. On this screen, the user will be presented with the number of correctly identified emails (rejected phishing emails and allowed non-phishing emails) and incorrect guesses. There is also a breakdown of the incorrect guesses, that being the number of false positives (accepting phishing emails) and false negatives (rejecting non-phishing emails). From this screen, the user has two options: continue to the next level or repeat the current level in order to correct their mistakes. 
 
 \begin{figure}[H]
     \centering
@@ -383,273 +354,151 @@ The main menu (as shown in Figure~\ref{fig:menu_wf}) will provide the user with 
 \chapter{Implementation}
 
 \section{Application Base}
-As a result of the descision to emulate Microsoft's Outlook email client, the obvious choice for development/design would be a web-based application. This not only fulfills the requirements set out by the user stories in terms of ease of installation and accessible from multiple device types, but would also be accurate to the core philosophy of emulating an environment in which phishing attacks occur.
+As a result of the decision to emulate Microsoft's Outlook email client, the obvious choice for development/design would be a web-based application. This not only fulfills the requirements set out by the user stories in terms of ease of installation and accessibility from multiple device types, but is also accurate to the core philosophy of emulating an environment in which phishing attacks occur (a web based email client).
 
 \section{Technologies}
+ A three tier architecture is suited for this project, as outlined in the design section. See Figure~\ref{fig:tech_arch} for an updated architecture diagram that includes the technologies used in the application.
 
-\section{Site Map}
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=0.9\linewidth]{images/tech_arch.png}}  
+    \caption{Updated system architecture outlining technologies used in core systems}
+    \label{fig:tech_arch} 
+\end{figure}
 
-\section{Development}
+\subsection{HTML, CSS, & JavaScript}
+The client tier is the web application itself, making use of HTML, CSS, and JavaScript to display the pseudo-email client to the user. The pages will simulate the basic design and functionality of outlook, as shown by the wireframes. The JavaScript will give some basic logic to the functionality of the game, such as scoring and transitioning between level states. JavaScript will also be the primary method in which emails are retrieved from the database of emails.
+
+\subsection{Flask}
+In the planning stages of developing the application back-end, a choice needed to be made between the two popular Python web frameworks: Django and Flask. Despite prior experience with Django, Flask was chosen due to the lightweight nature of the framework. Django is packaged with numerous tools and scripts which is useful in the majority of web-based applications. However for this project only a lightweight microframework is required and, if necessary, extensions to this framework can be added from a large library of supported extensions. 
+
+Flask makes use of the Application Factory Design Pattern \citep{flask}. This is the process of instantiating a class and then using objects as separate modules to that base class. In the case of this project, the Flask application is instantiated in the \verb| __init__.py| file and registers all modules (named blueprints) that are used in the application. These blueprints are modular, making use of templates and views to generate the different pages used within the project. The two blueprints created for this project are as follows:
+
+\begin{itemize}
+  \item \textbf{Authentication}: This is the page in which users will be able to register and login to their accounts. The details of which are stored in a database, with all passwords safely stored and hashed (using the Flask API \verb|werkzeug.security| functionality \citep{werkzeugSecurity}). This also checks against the database if the user already has an account under the username so multiple accounts of the same name cannot be created. If the user is not logged in they will be unable to access any of the content of the application.
+  \item \textbf{Email}: This is the page which simulates the main functionality of the email client, with emails being viewable, allowing the user to perform various actions on those emails.
+\end{itemize}
+
+Due to the modular nature of Flask and the blueprint systems, it is extremely simple to extend the functionality of the application and create new views/pages.
+
+Each of the blueprints contain their own callable functions that can be called by JavaScript and HTML. For instance, the JavaScript will make a HTTP request to the email blueprint in order to execute the relevant SQL query, returning the emails needed for the current level.
+
+The code used to create the training game and all blueprints can be seen in Listing~\ref{lst:blueprints}, showing the modularity of this design.
+
+\begin{lstlisting}[H, language=python, caption={Creation of training app and all associated blueprints in the \_\_init\_\_.py file}, label=lst:blueprints]
+    def create_app(test_config=None):
+    	app = Flask(__name__, instance_relative_config=True)
+    	
+        ...
+    
+    	app.register_blueprint(auth.bp)
+    	app.register_blueprint(email.bp)
+    	app.add_url_rule('/', endpoint='email')
+    
+    	return app
+\end{lstlisting}
+
+\subsection{SQLite}
+SQLite is a lightweight version of the SQL database engine. Due to the low requirements and faster data retrieval/storage, it is often used for basic databases within webapps. However, this functionality is limited with no support for concurrent changes to the database or multiple database-user types (e.g. admin and viewer access to database). It has inbuilt integration with the Flask WSGI and so was easy to implement using the \verb|sqlite3| package. The database requirements for this project simply needed a method to store a collection of emails and basic userdata, therefore SQLite was perfect for this project. Many of the drawbacks of using SQLite were inconsequential as the specifications of this webapp did not require the missing features.
+
+The structure of the database consists of two tables: \textit{Users} and \textit{Emails}. The \textit{Users} table only required three fields: ID, username, & password (hashed).
+
+The \textit{Emails} table stores all the emails that will be sent to the user through the duration of the training game. It contains seven fields: ID, difficulty (level in which the email appears), author, header, datetime, phishing (boolean bit indicating if the email is a phishing email), & content (main body of the email). Both of these can be seen in Figure~\ref{fig:database}. 
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=0.9\linewidth]{images/database.png}}  
+    \caption{Database ER Diagram (despite no relations between the tables)}
+    \label{fig:database} 
+\end{figure}
+
+
+\subsection{Python Anywhere?}
+[talk about when evaluation has been decided]
+
+\subsection{GitLab and Version Control}
+The codebase of this project was stored and maintained using GitLab and several backups. Version control is extremely important in breakdown and simplifying the development process through features such as branching and merging \citep{otte2009version}. Branching was used when implementing new features, keeping the master branch stable and functional. Once the feature branch has been completed and debugged, it is merged with the master branch. This also implements semantic versioning to label the new features and patches added to the codebase \citep{prestonwerner_2022}.
+
+\section{Functionality}
+
+\subsection{User Authentication}
+These pages include a registration page (Figure~\ref{fig:registration_page}) and a log in page (Figure~\ref{fig:log_in_page}). The registration page simply takes two user inputs: a username and password. The usernames are checked against the database to see if the account already exists, if so, an error message is displayed to the user at the top of the form. Otherwise a new entry is created in the database for that user.
+
+The log in page is very similar in design to the registration page, also taking the username and password as inputs. The user must have previously registered to successfully log in and access the rest of the training game. Errors, such as an incorrect password or unregistered user, are also displayed through an error message at the top of the form.
+
+The flask authentication process is used in both sections to check for existing users within the database. If an existing user is found upon registration, then an error is returned. When logging in, the database of users is searched for an existing user of the same username (which must be unique) and, if found, the entered password is checked alongside the hashed password stored within the database. If this is accepted, then the user is successfully logged in, otherwise returning an error. These registration authentication checks can be seen in Listing~\ref{lst:flask_auth}.
+
+\begin{lstlisting}[H, language=python, caption={Registration authentication checks in the auth.py file}, label=lst:flask_auth]
+    if error is None:
+		try:
+			db.execute("INSERT INTO user (username, password) VALUES (?, ?)",
+			(username, generate_password_hash(password)),
+			)
+			db.commit()
+		except db.IntegrityError:
+			error = f"User '{username}' is already registered"
+	else:
+		return redirect(url_for("auth.login"))
+	flash(error)
+\end{lstlisting}
+
+\subsection{Level Intro Stage}
+
+
+\subsection{Main Level Stage}
+Each of the levels consist of the player assessing a number of emails to delete or report all phishing emails. Each level contain 10 emails each with increasing numbers of phishing emails. Each email has been modified from real workplace emails, with changes made to protect privacy and other data. Each of the phishing emails have also been adapted from real world phishing emails in order to maintain the integrity and consistency of the training with genuine phishing attacks. Each email displays a read and unread indictator similar to that found in the Outlook email client (shown in Figure~\ref{fig:read_unread}). Once each of the emails have been read, the "Commit Report" button becomes available to click, sending the user into the summary stage of the level. If the user thinks they have detected a phishing email, they have two options in dealing with it. They can either report the email as phishing or simply delete the email, with the idea that genuine email clients contain a multitude of options and tools when dealing with emails and so the training game must (at least partially) reflect this. One such tool is the \textit{Contacts} button which will display a list of the in-game work colleagues the player is expected to receive emails from. The user can use this to establish a baseline of more trustworthy emails/senders. However, this will be tested as the user progresses to the more difficult levels.
+
+\begin{figure}[H]
+    \centering
+    \frame{\includegraphics[width=0.6\linewidth]{images/read_unread.png}}
+    \caption{Emails displaying the read status (top) and unread status (bottom)}
+    \label{fig:read_unread}
+\end{figure}
+
+The levels introduce a series of phishing techniques gradually, with each level becoming increasingly difficult in terms of detecting phishing emails. Context is also gradually introduced with the initial levels containing easily detectable, contextless emails. These do not contain any information relevant to the workplace or to the user themselves. Although these are often picked up by spam detection, giving the player an initial frame of reference for detecting "easy" phishing emails is key to layering on more difficult phishing tactics. 
+
+Level one contains only two phishing emails, both of which contain obvious fraud attempts and requests for finances. One of the phishing emails also includes a clearly suspicious hyperlink (e.g. \textit{http://www.86986568.com.cancercharity.9876875876987.aoseiuvnbsoiven.ru/oiuhaocin}), introducing the idea that hyperlinks can be very dangerous and are often used in phishing attacks. 
+
+The second level builds on the use of links within phishing emails, along with the tactics used in obscuring these links. Three phishing emails are present, each using a different technique. One email makes use of legitimate companies and details within the hyperlink in an, albeit poor, attempt to legitimise this link (e.g.  \textit{http://364.974.25.089:64/mcafee.com/virusprotect.html}). This level also introduces the concept of typo-squatting, changing some of the letters within a URL to trick the user into thinking it is legitimate (e.g. \textit{http://www.anazon.com/accountsecurity}). The final technique used in this level is link obfuscation whereby the hyperlink itself is hidden in text and the user must hover over the link in order to reveal the destination (e.g. \textit{\underline{Check Account} reveals https://247.972.76.314:76 as the URL}). These emails are more focused on context than the previous level but still lack any real information relating to the user or the company, instead basing the malicious emails on those one \emph{might} receive on a workplace email address. These being often from larger institutions and products used within a office or larger workplace.
+
+Level 3 contains 4 phishing emails, making use of both links and file attachments. Attachments can be used in phishing attacks to install malware, spyware, and data extraction software, so assessing these is a core principle in anti-phishing training. On top of this, file attachments to emails are commonplace in an office work environment (which is reflected in the non-phishing emails in this level), making the detection of phishing emails more difficult for the user. The phishing emails in this level make use of a number of attachments, namely, \textit{.pdf} files, \textit{.exe} applications, and \textit{.html} files. Excluding the \textit{.exe} file, these file types are used my both phishing and non-phishing emails and so the user must analyse the content of the email in the context of the rest of the emails to assess how malicious each email is. A workplace context is introduced into the phishing emails, making reference to common concepts in an office environment, including training and invoices. The URL techniques from the previous level are also included among emails of all types in this level.
+
+The final level contains an even split of 5 phishing emails and 5 non-phishing emails. These phishing emails are the most difficult to detect as some impersonate other members of staff and other departments within the business. As a result of this, the user will have to closely analyse the content of each email, along with any links or attachments they may contain, to do well in this level. Many of the attachments within the phishing emails have been disguised as official looking documents from legitimate sources with only a few indicators (such as file size or prior context) revealing their enmity. One of the key sections of this level are the two emails from the same employee, one being a phishing email impersonating a real employee. The second email from this employee references having their email account details stolen and emails being sent out without their knowledge. The user must link this with the previous email (containing an attachment) in order to correctly report it as phishing.
+
+\subsection{Level Summary Stage}
+At the end of each level, once the user has clicked the "Commit Report" button, they are greeted by a new set of emails. The first email is the summary of the users performance for that level, it details the total number of phishing and non-phishing emails alongside how many emails the user reported, deleted, or ignored. This summary also shows how many phishing emails the user ignored and failed to take action on. The following emails are either the phishing emails that were ignored or the non-phishing emails that were incorrectly reported. This stage is critical in user training, giving the user an insight into why they may have been incorrect and how to avoid this mistake in the future. On top of this, a basic scoring system has been implemented giving the user points based on the number of correct guesses and penalised for the number of mistakes made. 
 
 \section{Changes Made}
+From the previous wireframes and design choices, some changes have been made to the functionality and design of the program.
+
+\begin{itemize}
+  \item \verb|Main Menu|: this has been implemented almost exactly as shown in the wireframe (Figure~\ref{fig:menu_wf}) and can be seen in Figure~\ref{fig:menu_final}.
+  \item \verb|Email Screen/Main View|: The main design of this screen is similar to the wireframe, with several additions. Namely, the additional navigation bar which gives the user email specific actions depending on the content of the display. Three buttons are permanent fixtures on the left-hand side: \textit{"Get Mail"} which (once all emails have been read) allows the user to progress to the next stage of the level, \textit{"Commit Report"} which (once the emails have been read) allows the user to submit their decision and progress from the main stage to the summary stage, and the \textit{"Contacts"} button which displays the list of work colleagues within the "office". This screen has been split into two sections, outlined in the following points:
+    \begin{itemize}
+        \item \verb|Intro Screen|: This screen contains a single email detailing the key flags that the user should be looking out for when detecting phishing emails. This is done in an immersive way as to not break the context of the game, and so is displayed as a daily email from the player's boss. This can be seen in Figure~\ref{fig:intro_final}.
+        \item \verb|Level Screen|:This screen contains the main contents of the level, that being the list of emails in which the player has to detect the phishing emails. In the original design, the decision to either \textit{"allow"} or \textit{"reject"} an email was used, however this broke the core design rule that had been established: to keep the training simulation as close to a real life scenario as possible, retaining all context and immersion where possible. As a result, this was altered to fit in line with the outlook design, that being an additional set of buttons on the newly created navigation bar. These buttons will only appear when an email is displayed in full view, giving the user the option to either delete the email or report the email as phishing. For this, the "report as phishing" function was weighted higher (giving +2 points per correct report) than deleting the phishing email (+1 point per correct deletion). The reason for this being that reporting an email as phishing will not only prevent the phishing attack from working but will also highlight this in any phishing detection or auto-deletion system. The screen can be seen in Figure~\ref{fig:email_final}
+    \end{itemize}
+  \item \verb|Summary Screen|: This screen is also similar to the wireframe although more information is displayed. The summary now includes the total number of emails in the level, the number of emails the user has reported as phishing (including the number of correctly report phishing emails), the number of emails that have been deleted (along with the number of phishing emails deleted), the number of phishing emails not reported or deleted, and the number of non-phishing emails reported as phishing. The cumulative score of the user is also displayed at the bottom of this screen. Alongside this, the phishing emails that were not caught by the user (or the non-phishing emails that were incorrectly reported) are now displayed as separate emails on the left-hand side, allowing the user to view them to re-assess what they may of got wrong. This screen can be seen in Figure~\ref{fig:summary_final}.
+\end{itemize}
 
 \section{Challenges Faced}
 
-\section{Final Product}
 
 
 
-
-
-What did you do to implement this idea, and what technical achievements did you make?
-\section{Guidance}
-You can't talk about everything. Cover the high level first, then cover important, relevant or impressive details.
-
-\section{General points}
-
-These points apply to the whole dissertation, not just this chapter.
-
-
-
-\subsection{Figures}
-\emph{Always} refer to figures included, like Figure \ref{fig:relu}, in the body of the text. Include full, explanatory captions and make sure the figures look good on the page.
-You may include multiple figures in one float, as in Figure \ref{fig:synthetic}, using \texttt{subcaption}, which is enabled in the template.
-
-
-
-% Figures are important. Use them well.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\linewidth]{images/relu.pdf}    
-
-    \caption{In figure captions, explain what the reader is looking at: ``A schematic of the rectifying linear unit, where $a$ is the output amplitude,
-    $d$ is a configurable dead-zone, and $Z_j$ is the input signal'', as well as why the reader is looking at this: 
-    ``It is notable that there is no activation \emph{at all} below 0, which explains our initial results.'' 
-    \textbf{Use vector image formats (.pdf) where possible}. Size figures appropriately, and do not make them over-large or too small to read.
-    }
-
-    % use the notation fig:name to cross reference a figure
-    \label{fig:relu} 
-\end{figure}
-
-
-\begin{figure}
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{images/synthetic.png}
-        \caption{Synthetic image, black on white.}
-        \label{fig:syn1}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{images/synthetic_2.png}
-        \caption{Synthetic image, white on black.}
-        \label{fig:syn2}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)    
-    \caption{Synthetic test images for edge detection algorithms. \subref{fig:syn1} shows various gray levels that require an adaptive algorithm. \subref{fig:syn2}
-    shows more challenging edge detection tests that have crossing lines. Fusing these into full segments typically requires algorithms like the Hough transform.
-    This is an example of using subfigures, with \texttt{subref}s in the caption.
-    }\label{fig:synthetic}
-\end{figure}
-
-\clearpage
-
-\subsection{Equations}
-
-Equations should be typeset correctly and precisely. Make sure you get parenthesis sizing correct, and punctuate equations correctly 
-(the comma is important and goes \textit{inside} the equation block). Explain any symbols used clearly if not defined earlier. 
-
-For example, we might define:
-\begin{equation}
-    \hat{f}(\xi) = \frac{1}{2}\left[ \int_{-\infty}^{\infty} f(x) e^{2\pi i x \xi} \right],
-\end{equation}    
-where $\hat{f}(\xi)$ is the Fourier transform of the time domain signal $f(x)$.
-
-\subsection{Algorithms}
-Algorithms can be set using \texttt{algorithm2e}, as in Algorithm \ref{alg:metropolis}.
-
-% NOTE: line ends are denoted by \; in algorithm2e
-\begin{algorithm}
-    \DontPrintSemicolon
-    \KwData{$f_X(x)$, a probability density function returing the density at $x$.\; $\sigma$ a standard deviation specifying the spread of the proposal distribution.\;
-    $x_0$, an initial starting condition.}
-    \KwResult{$s=[x_1, x_2, \dots, x_n]$, $n$ samples approximately drawn from a distribution with PDF $f_X(x)$.}
-    \Begin{
-        $s \longleftarrow []$\;
-        $p \longleftarrow f_X(x)$\;
-        $i \longleftarrow 0$\;
-        \While{$i < n$}
-        {
-            $x^\prime \longleftarrow \mathcal{N}(x, \sigma^2)$\;
-            $p^\prime \longleftarrow f_X(x^\prime)$\;
-            $a \longleftarrow \frac{p^\prime}{p}$\;
-            $r \longleftarrow U(0,1)$\;
-            \If{$r<a$}
-            {
-                $x \longleftarrow x^\prime$\;
-                $p \longleftarrow f_X(x)$\;
-                $i \longleftarrow i+1$\;
-                append $x$ to $s$\;
-            }
-        }
-    }
-    
-\caption{The Metropolis-Hastings MCMC algorithm for drawing samples from arbitrary probability distributions, 
-specialised for normal proposal distributions $q(x^\prime|x) = \mathcal{N}(x, \sigma^2)$. The symmetry of the normal distribution means the acceptance rule takes the simplified form.}\label{alg:metropolis}
-\end{algorithm}
-
-\subsection{Tables}
-
-If you need to include tables, like Table \ref{tab:operators}, use a tool like https://www.tablesgenerator.com/ to generate the table as it is
-extremely tedious otherwise. 
-
-\begin{table}[]
-    \caption{The standard table of operators in Python, along with their functional equivalents from the \texttt{operator} package. Note that table
-    captions go above the table, not below. Do not add additional rules/lines to tables. }\label{tab:operators}
-    %\tt 
-    \rowcolors{2}{}{gray!3}
-    \begin{tabular}{@{}lll@{}}
-    %\toprule
-    \textbf{Operation}    & \textbf{Syntax}                & \textbf{Function}                            \\ %\midrule % optional rule for header
-    Addition              & \texttt{a + b}                          & \texttt{add(a, b)}                                    \\
-    Concatenation         & \texttt{seq1 + seq2}                    & \texttt{concat(seq1, seq2)}                           \\
-    Containment Test      & \texttt{obj in seq}                     & \texttt{contains(seq, obj)}                           \\
-    Division              & \texttt{a / b}                          & \texttt{div(a, b) }  \\
-    Division              & \texttt{a / b}                          & \texttt{truediv(a, b) } \\
-    Division              & \texttt{a // b}                         & \texttt{floordiv(a, b)}                               \\
-    Bitwise And           & \texttt{a \& b}                         & \texttt{and\_(a, b)}                                  \\
-    Bitwise Exclusive Or  & \texttt{a \textasciicircum b}           & \texttt{xor(a, b)}                                    \\
-    Bitwise Inversion     & \texttt{$\sim$a}                        & \texttt{invert(a)}                                    \\
-    Bitwise Or            & \texttt{a | b}                          & \texttt{or\_(a, b)}                                   \\
-    Exponentiation        & \texttt{a ** b}                         & \texttt{pow(a, b)}                                    \\
-    Identity              & \texttt{a is b}                         & \texttt{is\_(a, b)}                                   \\
-    Identity              & \texttt{a is not b}                     & \texttt{is\_not(a, b)}                                \\
-    Indexed Assignment    & \texttt{obj{[}k{]} = v}                 & \texttt{setitem(obj, k, v)}                           \\
-    Indexed Deletion      & \texttt{del obj{[}k{]}}                 & \texttt{delitem(obj, k)}                              \\
-    Indexing              & \texttt{obj{[}k{]}}                     & \texttt{getitem(obj, k)}                              \\
-    Left Shift            & \texttt{a \textless{}\textless b}       & \texttt{lshift(a, b)}                                 \\
-    Modulo                & \texttt{a \% b}                         & \texttt{mod(a, b)}                                    \\
-    Multiplication        & \texttt{a * b}                          & \texttt{mul(a, b)}                                    \\
-    Negation (Arithmetic) & \texttt{- a}                            & \texttt{neg(a)}                                       \\
-    Negation (Logical)    & \texttt{not a}                          & \texttt{not\_(a)}                                     \\
-    Positive              & \texttt{+ a}                            & \texttt{pos(a)}                                       \\
-    Right Shift           & \texttt{a \textgreater{}\textgreater b} & \texttt{rshift(a, b)}                                 \\
-    Sequence Repetition   & \texttt{seq * i}                        & \texttt{repeat(seq, i)}                               \\
-    Slice Assignment      & \texttt{seq{[}i:j{]} = values}          & \texttt{setitem(seq, slice(i, j), values)}            \\
-    Slice Deletion        & \texttt{del seq{[}i:j{]}}               & \texttt{delitem(seq, slice(i, j))}                    \\
-    Slicing               & \texttt{seq{[}i:j{]}}                   & \texttt{getitem(seq, slice(i, j))}                    \\
-    String Formatting     & \texttt{s \% obj}                       & \texttt{mod(s, obj)}                                  \\
-    Subtraction           & \texttt{a - b}                          & \texttt{sub(a, b)}                                    \\
-    Truth Test            & \texttt{obj}                            & \texttt{truth(obj)}                                   \\
-    Ordering              & \texttt{a \textless b}                  & \texttt{lt(a, b)}                                     \\
-    Ordering              & \texttt{a \textless{}= b}               & \texttt{le(a, b)}                                     \\
-    % \bottomrule
-    \end{tabular}
-    \end{table}
-\subsection{Code}
-
-Avoid putting large blocks of code in the report (more than a page in one block, for example). Use syntax highlighting if possible, as in Listing \ref{lst:callahan}.
-
-\begin{lstlisting}[language=python, float, caption={The algorithm for packing the $3\times 3$ outer-totalistic binary CA successor rule into a 
-    $16\times 16\times 16\times 16$ 4 bit lookup table, running an equivalent, notionally 16-state $2\times 2$ CA.}, label=lst:callahan]
-    def create_callahan_table(rule="b3s23"):
-        """Generate the lookup table for the cells."""        
-        s_table = np.zeros((16, 16, 16, 16), dtype=np.uint8)
-        birth, survive = parse_rule(rule)
-
-        # generate all 16 bit strings
-        for iv in range(65536):
-            bv = [(iv >> z) & 1 for z in range(16)]
-            a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p = bv
-
-            # compute next state of the inner 2x2
-            nw = apply_rule(f, a, b, c, e, g, i, j, k)
-            ne = apply_rule(g, b, c, d, f, h, j, k, l)
-            sw = apply_rule(j, e, f, g, i, k, m, n, o)
-            se = apply_rule(k, f, g, h, j, l, n, o, p)
-
-            # compute the index of this 4x4
-            nw_code = a | (b << 1) | (e << 2) | (f << 3)
-            ne_code = c | (d << 1) | (g << 2) | (h << 3)
-            sw_code = i | (j << 1) | (m << 2) | (n << 3)
-            se_code = k | (l << 1) | (o << 2) | (p << 3)
-
-            # compute the state for the 2x2
-            next_code = nw | (ne << 1) | (sw << 2) | (se << 3)
-
-            # get the 4x4 index, and write into the table
-            s_table[nw_code, ne_code, sw_code, se_code] = next_code
-
-        return s_table
-
-\end{lstlisting}
 
 %==================================================================================================================================
 \chapter{Evaluation} 
-How good is your solution? How well did you solve the general problem, and what evidence do you have to support that?
 
-\section{Guidance}
-\begin{itemize}
-    \item
-        Ask specific questions that address the general problem.
-    \item
-        Answer them with precise evidence (graphs, numbers, statistical
-        analysis, qualitative analysis).
-    \item
-        Be fair and be scientific.
-    \item
-        The key thing is to show that you know how to evaluate your work, not
-        that your work is the most amazing product ever.
-\end{itemize}
+\section{Unit Testing}
 
-\section{Evidence}
-Make sure you present your evidence well. Use appropriate visualisations, reporting techniques and statistical analysis, as appropriate.
+\section{User Evaluation}
 
-If you visualise, follow the basic rules, as illustrated in Figure \ref{fig:boxplot}:
-\begin{itemize}
-\item Label everything correctly (axis, title, units).
-\item Caption thoroughly.
-\item Reference in text.
-\item \textbf{Include appropriate display of uncertainty (e.g. error bars, Box plot)}
-\item Minimize clutter.
-\end{itemize}
-
-See the file \texttt{guide\_to\_visualising.pdf} for further information and guidance.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1.0\linewidth]{images/boxplot_finger_distance.pdf}    
-
-    \caption{Average number of fingers detected by the touch sensor at different heights above the surface, averaged over all gestures. Dashed lines indicate
-    the true number of fingers present. The Box plots include bootstrapped uncertainty notches for the median. It is clear that the device is biased toward 
-    undercounting fingers, particularly at higher $z$ distances.
-    }
-
-    % use the notation fig:name to cross reference a figure
-    \label{fig:boxplot} 
-\end{figure}
 
 
 %==================================================================================================================================
 \chapter{Conclusion}    
-Summarise the whole project for a lazy reader who didn't read the rest (e.g. a prize-awarding committee).
-\section{Guidance}
-\begin{itemize}
-    \item
-        Summarise briefly and fairly.
-    \item
-        You should be addressing the general problem you introduced in the
-        Introduction.        
-    \item
-        Include summary of concrete results (``the new compiler ran 2x
-        faster'')
-    \item
-        Indicate what future work could be done, but remember: \textbf{you
-        won't get credit for things you haven't done}.
-\end{itemize}
+
 
 %==================================================================================================================================
 %
@@ -661,64 +510,55 @@ Summarise the whole project for a lazy reader who didn't read the rest (e.g. a p
 
 \chapter{Appendices}
 
-Typical inclusions in the appendices are:
-
-\begin{itemize}
-\item
-  Copies of ethics approvals (required if obtained)
-\item
-  Copies of questionnaires etc. used to gather data from subjects.
-\item
-  Extensive tables or figures that are too bulky to fit in the main body of
-  the report, particularly ones that are repetitive and summarised in the body.
-
-\item Outline of the source code (e.g. directory structure), or other architecture documentation like class diagrams.
-
-\item User manuals, and any guides to starting/running the software.
-
-\end{itemize}
-
-\textbf{Don't include your source code in the appendices}. It will be
-submitted separately.
-
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1.1\linewidth]{images/whathack_1.png}    
-    \caption{What.Hack main game screen with advisor giving player tips on the contents of the email, pointing out the use of typo-squatting and URL manipulation}
-    \label{fig:whathack_1} 
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=1.1\linewidth]{images/whathack_2.png}    
-    \caption{What.Hack main game screen with showing the buttons and available actions given to the player}
-    \label{fig:whathack_2} 
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\linewidth]{images/antiphishingphil.png}   
-    \caption{Anti-Phishing Phil game screen with the player fish interacting with a worm holding a URL, with the fish advisor giving advice to the player}
-    \label{fig:antiphishingphil} 
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=1.1\linewidth]{images/phishguru.png}    
-    \caption{The PhishGuru comic strip giving general tips to avoid phishing attacks }
-    \label{fig:phishguru} 
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1.1\linewidth]{images/outlook.png}
+    \frame{\includegraphics[width=1.1\linewidth]{images/outlook.png}}
     \caption{Outlook email client}
     \label{fig:outlook}
 \end{figure}
 
-\begin{figure}
-    \includegraphics[width=1.1\linewidth]{images/applemail.png}
+
+
+\begin{figure}[H]
+    \frame{\includegraphics[width=1\linewidth]{images/applemail.png}}
     \caption{Apple Mail desktop email client}
     \label{fig:applemail}
 \end{figure}
 
+
+
+\begin{figure}[H]
+    \frame{\includegraphics[width=1\linewidth]{images/register_page.png}}
+    \caption{Registration Page}
+    \label{fig:registration_page}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \frame{\includegraphics[width=1\linewidth]{images/log_in_page.png}}
+    \caption{Log In Page}
+    \label{fig:log_in_page}
+\end{figure}
+
+
+\begin{figure}[H]
+    \frame{\includegraphics[width=1\linewidth]{images/menu_final.png}}
+    \caption{Final implementation of main menu screen}
+    \label{fig:menu_final}
+\end{figure}
+
+\begin{figure}[H]
+    \frame{\includegraphics[width=1\linewidth]{images/email_final.png}}
+    \caption{Final implementation of main level screen}
+    \label{fig:email_final}
+\end{figure}
+
+\begin{figure}[H]
+    \frame{\includegraphics[width=1\linewidth]{images/summary_final.png}}
+    \caption{Final implementation of summary screen}
+    \label{fig:summary_final}
+\end{figure}
 
 \end{appendices}
 
